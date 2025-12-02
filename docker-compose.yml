@@ -32,6 +32,10 @@ services:
       DB_PASSWORD: ${DB_PASSWORD}
     depends_on:
       - db
+    volumes:
+      - orangehrm-lib-confs:/var/www/html/lib/confs
+      - orangehrm-src-cache:/var/www/html/src/cache
+      - orangehrm-src-log:/var/www/html/src/log
 
   rabbitmq:
     image: rabbitmq:4.0.5-management
@@ -63,3 +67,6 @@ services:
 volumes:
   db_data:
   rabbitmq_data:
+  orangehrm-lib-confs:
+  orangehrm-src-cache:
+  orangehrm-src-log:
